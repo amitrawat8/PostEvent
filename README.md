@@ -80,7 +80,7 @@ Add it in your root build.gradle at the end of repositories:
 
 
 
-### Unsubscibe the PostEventBus(e.g MainActivity.kt)  
+### UnSubscribe the PostEventBus(e.g MainActivity.kt)  
 
 ```kotlin
 
