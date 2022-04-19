@@ -38,7 +38,7 @@ Add it in your root build.gradle at the end of repositories:
                     }
 
                     EventConstants.dataWithObject -> {
-                        eventItem = it.value as EventItem
+                       var eventItem: EventItem  = it.value as EventItem
 
                         Toast.makeText(
                             this,
