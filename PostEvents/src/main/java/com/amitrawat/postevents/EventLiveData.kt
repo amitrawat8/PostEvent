@@ -16,7 +16,7 @@ class EventLiveData(private val mSubject: String) : LiveData<ConsumableEvent>() 
     override fun removeObserver(observer: Observer<in ConsumableEvent>) {
         super.removeObserver(observer)
         if (!hasObservers()) {
-            PostEventBus.unregister(mSubject)
+            PostEvent.unregister(mSubject)
         }
     }
 }

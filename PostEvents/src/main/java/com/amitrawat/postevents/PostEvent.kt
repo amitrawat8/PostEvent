@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 /**
  * Singleton object to manage bus events.
  */
-object PostEventBus {
+object PostEvent {
 
     private val subjectMap = HashMap<String, EventLiveData>()
 

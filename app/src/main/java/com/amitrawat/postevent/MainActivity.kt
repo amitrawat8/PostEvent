@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.amitrawat.postevents.ConsumableEvent
-import com.amitrawat.postevents.PostEventBus
+import com.amitrawat.postevents.PostEvent
 
 class MainActivity : AppCompatActivity() {
     private var eventItem: EventItem = EventItem()
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getSubscribeData() {
-        PostEventBus.subscribe(EventPage.MAIN_ACTIVITY, this) {
+        PostEvent.subscribe(EventPage.MAIN_ACTIVITY, this) {
             it.runAndConsume {
                 when (it.id) {
                     EventConstants.withoutData -> {
@@ -49,21 +49,21 @@ class MainActivity : AppCompatActivity() {
     /*calling Mainactivity subscriber  in other activity and fragment  */
     private fun sendData() {
 /*sending without data*/
-        PostEventBus.publish(
+        PostEvent.publish(
             EventPage.MAIN_ACTIVITY,
             ConsumableEvent(id = EventConstants.withoutData)
         )
 
         /*send with data string*/
 
-        PostEventBus.publish(
+        PostEvent.publish(
             EventPage.MAIN_ACTIVITY,
             ConsumableEvent(id = EventConstants.dataWithString, value = "hello")
         )
 
         /*send with object */
 
-        PostEventBus.publish(
+        PostEvent.publish(
             EventPage.MAIN_ACTIVITY,
             ConsumableEvent(id = EventConstants.dataWithObject, value = EventItem(1, 2))
         )
@@ -74,6 +74,6 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         /*unregister the Subscriber*/
-        PostEventBus.unregister(EventPage.MAIN_ACTIVITY)
+        PostEvent.unregister(EventPage.MAIN_ACTIVITY)
     }
 }

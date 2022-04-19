@@ -1,25 +1,25 @@
 package com.amitrawat.postevent
 
 import com.amitrawat.postevents.ConsumableEvent
-import com.amitrawat.postevents.PostEventBus
+import com.amitrawat.postevents.PostEvent
 
 object EventBus {
-    fun sendWithoutData() = PostEventBus.publish(
+    fun sendWithoutData() = PostEvent.publish(
         EventPage.MAIN_ACTIVITY, ConsumableEvent(id = EventConstants.withoutData)
     )
 
     fun unRegister(subject: String) {
-        PostEventBus.unregister(subject)
+        PostEvent.unregister(subject)
     }
 
     fun sendWithDataString(title: String) =
-        PostEventBus.publish(
+        PostEvent.publish(
             EventPage.MAIN_ACTIVITY,
             ConsumableEvent(id = EventConstants.dataWithString, value = title)
         )
 
 
-    fun sendObject(eventItem: EventItem) = PostEventBus.publish(
+    fun sendObject(eventItem: EventItem) = PostEvent.publish(
         EventPage.MAIN_ACTIVITY,
         ConsumableEvent(id = EventConstants.dataWithObject, value = eventItem)
     )
