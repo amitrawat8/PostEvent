@@ -1,5 +1,5 @@
 ## PostEvent 
-You can consider PostEvent as a lightweight communication channel for passing data within activities, or services, or fragments or between any of them. Think of EventBus as an underlying layer in your app which is independent of any active activities or services or fragments and their lifecycle.
+You can consider PostEvent as a lightweight communication channel for passing data within activities, or services, or fragments or between any of them. Think of PostEvent as an underlying layer in your app which is independent of any active activities or services or fragments and their lifecycle.
 
 ### Step 1. Add the JitPack repository to your build file 
 Add it in your root build.gradle at the end of repositories:
