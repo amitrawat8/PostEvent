@@ -20,7 +20,7 @@ Add it in your root build.gradle at the end of repositories:
 	        implementation 'com.github.amitrawat8:PostEvent:1.0.0'
 	}
 	
-### usage of PostEventBus Subscribe in activity or fragment 
+### usage of PostEventBus Subscribe in activity or fragment (e.g MainActivity.kt)
 
 ```kotlin
  private fun getSubscribeData() {
@@ -55,7 +55,7 @@ Add it in your root build.gradle at the end of repositories:
     }
 ```
 
-### usage of calling PostEventBus Subscribe of activity or fragment in other class  
+### usage of calling PostEventBus Subscribe of activity or fragment in other class  (e.g SecondActivity.kt)
 
 ```kotlin
  
@@ -80,7 +80,7 @@ Add it in your root build.gradle at the end of repositories:
 
 
 
-### Unsubscibe the PostEventBus  
+### Unsubscibe the PostEventBus(e.g MainActivity.kt)  
 
 ```kotlin
 
