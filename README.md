@@ -17,14 +17,14 @@ Add it in your root build.gradle at the end of repositories:
 ### Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.amitrawat8:PostEvent:1'
+	        implementation 'com.github.amitrawat8:PostEvent:1.0.0'
 	}
 	
 ### usage of PostEventBus Subscribe in activity or fragment 
 
 ```kotlin
  private fun getSubscribeData() {
-        PostEventBus.subscribe(EventPage.MAIN_ACTIVITY, this) {
+        PostEvent.subscribe(EventPage.MAIN_ACTIVITY, this) {
             it.runAndConsume {
                 when (it.id) {
                     EventConstants.withoutData -> {
@@ -61,19 +61,19 @@ Add it in your root build.gradle at the end of repositories:
  
  /*send without data */
 
- PostEventBus.publish(
+ PostEvent.publish(
             EventPage.MAIN_ACTIVITY,
             ConsumableEvent(id = EventConstants.withoutData))
 
         /*send with data string*/
 
-        PostEventBus.publish(
+        PostEvent.publish(
             EventPage.MAIN_ACTIVITY,
             ConsumableEvent(id = EventConstants.dataWithString, value = "hello"))
 
         /*send with object */
 
-        PostEventBus.publish(
+        PostEvent.publish(
             EventPage.MAIN_ACTIVITY,
             ConsumableEvent(id = EventConstants.dataWithObject, value = EventItem(1, 2)) )
 ```
@@ -87,7 +87,7 @@ Add it in your root build.gradle at the end of repositories:
  override fun onDestroy() {
         super.onDestroy()
         /*unregister the Subscriber*/
-        PostEventBus.unregister(EventPage.MAIN_ACTIVITY)
+        PostEvent.unregister(EventPage.MAIN_ACTIVITY)
     }
     
 ```    
